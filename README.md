@@ -1,3 +1,42 @@
+# PayPilot — L02 Quality Bar Proposal
+
+The proposal is in `quality-bar-proposal.md`.
+Raw evaluation results are in `reports/`.
+
+## Run configuration
+
+- Date: October 2, 2026
+- Profiles: `clean` (2 runs), followed by `lesson-02` (3 runs)
+- Judge provider: Anthropic
+- Judge model: `claude-haiku-4-5`
+- CLOCK_OVERRIDE: `2026-09-15T10:00:00Z`
+- Test suite: `cases.json` — 13 cases
+
+## Reproduce the evaluation
+
+Follow the setup instructions below. Set `JUDGE_MODEL=claude-haiku-4-5`
+in your local `.env` file and use the clock value specified above.
+
+Run from the evaluation repository:
+
+```powershell
+docker compose run --rm eval --profiles clean,lesson-02 --runs 3 --baseline-runs 2
+```
+
+The run requires a local PayPilot stand and your own API credentials.
+Do not commit `.env` or API keys.
+
+## Submitted evidence
+
+- `quality-bar-proposal.md`
+- `reports/l02-clean-lesson-02-20261002-160222.json`
+- `reports/full-run.txt`
+- `cases.json`
+- `l02_eval.py`
+- `requirements.txt`
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 # L02 · Скрипт метрик
 
 Три текстові метрики DeepEval (faithfulness, answer relevancy, hallucination
